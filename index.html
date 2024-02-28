@@ -22,7 +22,8 @@
         <section class="my-5">
             <div class="bg-gray-200 p-3">
 
-                <input id="search-field" type="text" placeholder="Search Phone" class="input input-bordered w-full max-w-xs" />
+                <input id="search-field" type="text" placeholder="Search Phone"
+                    class="input input-bordered w-full max-w-xs" />
                 <button onclick="handleSearch()" class="btn btn-primary">Search</button>
 
             </div>
@@ -32,32 +33,49 @@
         <!-- result data  -->
 
         <section>
+
+            <!-- loading spinner -->
+
+            <div id="loading" class="text-center my-40 hidden">
+                <span class="loading loading-spinner loading-lg "></span>
+            </div>
             <div id="phones-container">
-
-                <!-- <div class="card bg-base-100 shadow-xl">
-
-                    <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-                    <div class="card-body">
-                      <h2 class="card-title">Shoes!</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
-                      <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Buy Now</button>
-                      </div>
-                    </div>
-
-                  </div> -->
-
-
-
-
             </div>
 
+            <!-- show all button -->
+
             <div id="show-all-container" class="hidden text-center">
-                <button class="btn btn-accent ">Show All</button>
-              </div>
+                <button onclick="handleShowAll()" class="btn btn-accent ">Show All</button>
+            </div>
+
 
 
         </section>
+
+
+
+        <div>
+
+            <!-- Open the modal using ID.showModal() method -->
+            <!-- <button class="btn" onclick="">open modal</button> -->
+            <dialog id="my_details_modal" class="modal modal-bottom sm:modal-middle">
+                <div  id="show-modal-container" class="modal-box">
+
+                  
+                
+                    <h3 id="phone-name" class="font-bold text-lg">Hello!</h3>
+                    <p class="py-4">Press ESC key or click the button below to close</p>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <!-- if there is a button in form, it will close the modal -->
+                            <button class="btn">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
+
+
+        </div>
 
 
 
